@@ -11,22 +11,17 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
-
-
-
-
+xrdb -merge ~/.Xresources
 
 xsetroot -cursor_name left_ptr
 setxkbmap -layout no
 
 feh --bg-fill "/home/kimbo/Backgrounds/bg.jpg"
 
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x000000 --height 18 & 
+#trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x000000 --height 29 & 
+
 
 xmodmap -e "clear Lock" 
 xmodmap -e "keycode 66 = Super_L"
 
 exec xmonad
-
