@@ -1,5 +1,7 @@
 execute pathogen#infect()
 
+syntax on
+
 
 " -----PLUGINS
 let g:airline_powerline_fonts = 1
@@ -13,9 +15,10 @@ vnoremap < <gv				"Better indentation
 vnoremap > >gv				"Better indentation PLUGIN-CONFIG
 
 " -----COLORS
-color wombat256mod
+
 highlight ColorColumn ctermbg=darkgray
-syntax on
+color wombat256mod
+set t_Co=256
 
 set mouse=a
 
@@ -37,5 +40,3 @@ set nowritebackup
 set noswapfile
 
 set laststatus=2
-
-
