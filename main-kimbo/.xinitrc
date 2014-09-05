@@ -16,11 +16,6 @@ xrdb -merge ~/.Xresources
 xsetroot -cursor_name left_ptr
 setxkbmap -layout no
 
-feh --bg-fill "/home/kimbo/Backgrounds/bg.jpg"
-
-#trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 10 --transparent true --alpha 0 --tint 0x000000 --height 29 & 
-
-
 xmodmap -e "clear Lock" 
 xmodmap -e "keycode 66 = Super_L"
 

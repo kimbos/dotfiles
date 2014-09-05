@@ -5,6 +5,7 @@ import System.Exit
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+import XMonad.Actions.SpawnOn
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.Spacing  
 import XMonad.Layout.PerWorkspace  
@@ -204,20 +205,28 @@ myLayout = webLayout
 myManageHook = (composeAll . concat $
     [ [resource     =? r            --> doIgnore           |   r   <- myIgnores] 
     , [className    =? c            --> doShift  "2"   |   c   <- myWorkSpace2   ]
-    , [className    =? c            --> doShift  "5"   |   c   <- myWorkSpace5   ] 
+    , [className    =? c            --> doShift  "3"   |   c	<- myWorkSpace3   ]
+	, [className    =? c            --> doShift  "4"   |   c   <- myWorkSpace4   ]
+	, [className    =? c            --> doShift  "5"   |   c   <- myWorkSpace5   ] 
     , [className    =? c            --> doShift  "6"   |   c   <- myWorkSpace6   ] 
-    , [className    =? c            --> doShift  "9"   |   c   <- myWorkSpace9   ] 
+	, [className    =? c            --> doShift  "7"   |   c   <- myWorkSpace7   ] 
+	, [className    =? c            --> doShift  "8"   |   c   <- myWorkSpace8   ] 
+	, [className    =? c            --> doShift  "9"   |   c   <- myWorkSpace9   ] 
     ])
 
     where   
        -- classnames
-        myWorkSpace2  = ["Chromium"]
-	myWorkSpace5  = ["xfreerdp"]
-	myWorkSpace6  = ["Gimp"]
-        myWorkSpace9  = ["Firefox"]
+		myWorkSpace2 = ["Chromium"]	
+		myWorkSpace3 = ["weechat"]
+		myWorkSpace4 = ["e4"]
+		myWorkSpace5 = ["xfreerdp"]
+		myWorkSpace6 = ["Gimp"]
+		myWorkSpace7 = ["e7"]
+		myWorkSpace8 = ["e8"]
+		myWorkSpace9 = ["Firefox"]
         
 	-- resources
-        myIgnores = ["desktop","desktop_window","notify-osd","stalonetray","trayer"]
+		myIgnores = ["desktop","desktop_window","notify-osd","stalonetray","trayer"]
         
 ------------------------------------------------------------------------
 -- Event handling
@@ -250,7 +259,11 @@ myEventHook = mempty
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+
+myStartupHook :: X ()
+myStartupHook = do
+	spawn "xterm -e \"feh --bg-fill /home/kimbo/Backgrounds/bg.jpg && exit\""
+	spawnOn "3" ("xterm -e weechat") 
 
 ------------------------------------------------------------------------
 

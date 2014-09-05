@@ -1,4 +1,5 @@
-XTerm*faceName: Terminus: style=Regular: size=10
+#XTerm*faceName: Terminus: style=Regular: size=10,Liberation\ Mono\ for\ Powerline: size=10
+XTerm*faceName: Liberation\ Mono\ for\ Powerline: size=10
 XTerm*background: #111111
 XTerm*foreground: #ffffff
 
