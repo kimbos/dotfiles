@@ -5,6 +5,8 @@ syntax on
 
 " -----PLUGINS
 let g:airline_powerline_fonts = 1
+"set guifont=Liberation\ Mono\ for\ Powerline
+set encoding=utf-8
 
 " -----SHORTCUTS
 let mapleader = ","

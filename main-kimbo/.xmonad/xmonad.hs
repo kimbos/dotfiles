@@ -180,8 +180,11 @@ webLayout = web ||| tiled ||| Mirror tiled ||| Full
      -- Percent of screen to increment by when resizing panes
      delta   = (3/100)
 
-nobordersLayout = noBorders $ Full
-myLayout = onWorkspace "2" nobordersLayout $ webLayout
+--nobordersLayout = noBorders $ Full
+--myLayout = onWorkspace "7" nobordersLayout $ webLayout
+myLayout = webLayout
+
+
 
 -----------------------------------------------------------------------
 -- Window rules:
@@ -280,4 +283,3 @@ main = do
 	        handleEventHook    = myEventHook,
 	        startupHook        = myStartupHook
     }
-

@@ -1,3 +1,7 @@
 XTerm*faceName: Terminus: style=Regular: size=10
 XTerm*background: #111111
 XTerm*foreground: #ffffff
+
+XTerm*dynamicColors: true
+*customization: -color
+XTerm*termName:  xterm-256color
