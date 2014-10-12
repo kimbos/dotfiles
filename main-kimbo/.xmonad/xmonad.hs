@@ -28,8 +28,8 @@ myModMask       = mod4Mask
 
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
-myBorderWidth   = 2 
-myNormalBorderColor  = "#ffffff"
+myBorderWidth   = 1 
+myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#55ccff"
 
 
@@ -158,7 +158,7 @@ webLayout = web ||| tiled ||| Mirror tiled ||| Full
 	masterwindows = 1
 	delta   = (5/100)
 
-myLayout = spacing 3 $ webLayout
+myLayout = spacing 0 $ webLayout
 
 
 

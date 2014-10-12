@@ -1,6 +1,6 @@
-#XTerm*faceName: Terminus: style=Regular: size=10,Liberation\ Mono\ for\ Powerline: size=10
-XTerm*faceName: Liberation\ Mono\ for\ Powerline: size=10
-XTerm*background: #222222
+#XTerm*faceName: freeMono:size=12
+XTerm*faceName: Liberation\ Mono\ for\ Powerline:size=11
+XTerm*background: #121212
 XTerm*foreground: #ffffff
 
 XTerm*dynamicColors: true
