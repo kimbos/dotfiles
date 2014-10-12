@@ -41,8 +41,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
     
-    -- CHROME
-    , ((modm .|. shiftMask, xK_o     ), spawn "chromium")
+
+    , ((modm .|. shiftMask, xK_o     ), spawn "google-chrome")
+    , ((modm .|. shiftMask, xK_i     ), spawn "iceweasel")
+
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -141,15 +143,6 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
 ------------------------------------------------------------------------
 -- Layouts:
-
--- You can specify and transform your layouts by modifying these values.
--- If you change layout bindings be sure to use 'mod-shift-space' after
--- restarting (with 'mod-q') to reset your layout state to the new
--- defaults, as xmonad preserves your old layout settings by default.
---
--- The available layouts.  Note that each layout is separated by |||,
--- which denotes layout choice.
---
 webLayout = web ||| tiled ||| Mirror tiled ||| Full
   where
 	tiled = Tall masterwindows delta (5/10)
@@ -206,34 +199,10 @@ myManageHook = (composeAll . concat $
 ------------------------------------------------------------------------
 -- Event handling
 
--- * EwmhDesktops users should change this to ewmhDesktopsEventHook
---
--- Defines a custom handler function for X Events. The function should
--- return (All True) if the default handler is to be run afterwards. To
--- combine event hooks use mappend or mconcat from Data.Monoid.
---
 myEventHook = mempty
 
 ------------------------------------------------------------------------
--- Status bars and logging
-
--- Perform an arbitrary action on each internal state change or X event.
--- See the 'XMonad.Hooks.DynamicLog' extension for examples.
---
---myLogHook = (dynamicLogWithPP xmobarPP {
---		ppOutput = hPutStrLn xmproc,
---		ppTitle = const"",
---		ppLayout = xmobarColor "#666666" ""
---		})
-
-------------------------------------------------------------------------
 -- Startup hook
-
--- Perform an arbitrary action each time xmonad starts or is restarted
--- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
--- per-workspace layout choices.
---
--- By default, do nothing.
 
 myStartupHook :: X ()
 myStartupHook = do
