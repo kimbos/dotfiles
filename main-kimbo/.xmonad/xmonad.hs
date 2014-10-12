@@ -15,40 +15,21 @@ import XMonad.Util.Run(spawnPipe)
 import System.IO
 
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
+
 myTerminal      = "xterm"
 
--- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
 
--- Whether clicking on a window to focus also passes the click to the window
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
--- Width of the window border in pixels.
---
-myBorderWidth   = 1
-
--- modMask lets you specify which modkey you want to use. The default
--- is mod1Mask ("left alt").  You may also consider using mod3Mask
--- ("right alt"), which does not conflict with emacs keybindings. The
--- "windows key" is usually mod4Mask.
---
 myModMask       = mod4Mask
 
--- The default number of workspaces (virtual screens) and their names.
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
--- of this list.
---
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
--- Border colors for unfocused and focused windows, respectively.
---
-myNormalBorderColor  = "#000000"
+myBorderWidth   = 2 
+myNormalBorderColor  = "#ffffff"
 myFocusedBorderColor = "#55ccff"
 
 
@@ -171,19 +152,13 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 --
 webLayout = web ||| tiled ||| Mirror tiled ||| Full
   where
-     -- default tiling algorithm partitions the screen into two panes
-     tiled   = spacing 1 $ Tall nmaster delta (5/10)
-     web = spacing 1 $ Tall nmaster delta (6/10)
+	tiled = Tall masterwindows delta (5/10)
+	web = Tall masterwindows delta (6/10)
+     
+	masterwindows = 1
+	delta   = (5/100)
 
-     -- The default number of windows in the master pane
-     nmaster = 1
-
-     -- Percent of screen to increment by when resizing panes
-     delta   = (3/100)
-
---nobordersLayout = noBorders $ Full
---myLayout = onWorkspace "7" nobordersLayout $ webLayout
-myLayout = webLayout
+myLayout = spacing 3 $ webLayout
 
 
 
@@ -263,6 +238,7 @@ myEventHook = mempty
 myStartupHook :: X ()
 myStartupHook = do
 	spawn "xterm -e \"feh --bg-fill /home/kimbo/Backgrounds/bg.jpg && exit\""
+	spawn "xcompmgr"
 	spawnOn "3" ("xterm -e weechat") 
 
 ------------------------------------------------------------------------
