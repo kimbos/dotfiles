@@ -220,9 +220,11 @@ main = do
 		layoutHook = avoidStruts $ myLayout,	
 
 		logHook = dynamicLogWithPP xmobarPP {
-                ppOutput = hPutStrLn xmproc,
-                ppTitle = const""
-                ,ppLayout = const""
+                ppTitle = xmobarColor "#333333" "" . shorten 80
+				, ppCurrent = xmobarColor "#ffff00" ""
+					. wrap "(" ")"
+				, ppVisible = xmobarColor "#00ffff" ""
+					. wrap "[" "]"
                 },
 
 
