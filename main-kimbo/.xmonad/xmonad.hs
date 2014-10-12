@@ -276,14 +276,14 @@ main = do
 
 		logHook = dynamicLogWithPP xmobarPP {
                 ppOutput = hPutStrLn xmproc,
-                ppTitle = const"",
-                ppLayout = xmobarColor "#666666" ""
+                ppTitle = const""
+                ,ppLayout = const""
                 },
 
 
         	terminal           = myTerminal,
         	focusFollowsMouse  = myFocusFollowsMouse,
-	        clickJustFocuses   = myClickJustFocuses,
+	        --clickJustFocuses   = myClickJustFocuses,
 	        borderWidth        = myBorderWidth,
 	        modMask            = myModMask,
 	        workspaces         = myWorkspaces,
