@@ -8,4 +8,4 @@ ln -s ~/opt/dotfiles/main-kimbo/.xinitrc ~/.xinitrc
 ln -s ~/opt/dotfiles/main-kimbo/.Xresources ~/.Xresources
 ln -s ~/opt/dotfiles/main-kimbo/.weechat/weechat.conf ~/.weechat/weechat.conf
 ln -s ~/opt/dotfiles/main-kimbo/.weechat/buffers.conf ~/.weechat/buffers.conf
-ln -s ~/opt/dotfiles/main-kimbo/.asoundrc.conf ~/.asoundrc.conf
+ln -s ~/opt/dotfiles/main-kimbo/.asoundrc ~/.asoundrc
