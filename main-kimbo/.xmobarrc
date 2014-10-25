@@ -1,7 +1,7 @@
 Config { font = "xft:Bitstream Vera Sans Mono:size=9:antialias=true"
        , bgColor = "black"
        , fgColor = "grey"
-       , position = TopW L 100
+       , position = TopW L 98 
        , commands = [ 
 						Run Date "%a %b%_d | %k:%M" "date" 10,
 						Run StdinReader

@@ -8,6 +8,9 @@ let g:airline_powerline_fonts = 1
 "set guifont=Liberation\ Mono\ for\ Powerline
 set encoding=utf-8
 
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
 " -----SHORTCUTS
 let mapleader = ","
 
@@ -23,6 +26,8 @@ color wombat256mod
 set t_Co=256
 
 set mouse=a
+
+set backspace=2
 
 set exrc
 set secure
