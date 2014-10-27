@@ -8,8 +8,8 @@ let g:airline_powerline_fonts = 1
 "set guifont=Liberation\ Mono\ for\ Powerline
 set encoding=utf-8
 
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+"let g:syntastic_cpp_compiler = 'clang++'
+"let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " -----SHORTCUTS
 let mapleader = ","
