@@ -19,8 +19,10 @@ setxkbmap -layout no
 xmodmap -e "clear Lock" 
 xmodmap -e "keycode 66 = Super_L"
 
-trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 2 --transparent true --alpha 0 --tint 0x000000 --height 18 &
+trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 3 --transparent true --alpha 0 --tint 0x000000 --height 18 &
+hexchat &
 #volti &
-parcellite &
+#parcellite &
+#steam-debian -silent &
 
 exec xmonad
