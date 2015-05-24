@@ -42,7 +42,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
 bindsym $mod+oslash focus right
 
 # alternatively, you can use the cursor keys:
@@ -151,10 +151,10 @@ bindsym $mod+r mode "resize"
 # Personal preferences
 # --------------------
 bar {  
-
+    tray_output primary
     position			top
-	status_command		i3status 
-    workspace_buttons	yes
+    status_command		i3status 
+    workspace_buttons		yes
  
     colors {
         background #000000
@@ -170,14 +170,17 @@ bar {
 hide_edge_borders none 
 new_window pixel 2
 
-
-exec --no-startup-id		feh --bg-fill /home/kimbo/Backgrounds/bg.jpg 
+exec_always 			$HOME/Scripts/mon.sh
+exec_always			feh --bg-fill /home/kimbo/Backgrounds/bg.png 
 exec --no-startup-id		hexchat --minimize=2
+exec --no-startup-id		nm-applet
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
-bindsym $mod+KP_Add			exec "amixer set Master 5%+"
+bindsym $mod+KP_Add		exec "amixer set Master 5%+"
 
-bindsym $mod+o				exec "google-chrome-beta"
-bindsym $mod+i				exec "iceweasel"
-bindsym $mod+b				exec "$HOME/Scripts/ss13"
-
+bindsym $mod+o			exec "google-chrome"
+bindsym $mod+i			exec "iceweasel"
+bindsym $mod+b			exec "$HOME/Scripts/ss13"
+bindsym $mod+l			exec "i3lock --image=$HOME/Backgrounds/lock.png -t"
+bindsym $mod+p			exec "pac"
+bindsym $mod+t			exec "xtightvncviewer"
