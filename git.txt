@@ -1,6 +1,11 @@
-git add *
-git status
-git commit -m “update”
-git push origin master
----
-git pull
+sync from local:
+	git add *
+	git status
+	git commit -m “update”
+	git push origin master
+
+sync from remote:
+	git pull
+
+clone to new computer:
+	git clone https://github.com/kimbos/dotfiles
