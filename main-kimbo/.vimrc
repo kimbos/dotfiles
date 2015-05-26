@@ -1,4 +1,4 @@
-execute pathogen#infect()
+"execute pathogen#infect()
 
 syntax on
 
@@ -22,7 +22,8 @@ vnoremap > >gv				"Better indentation PLUGIN-CONFIG
 " -----COLORS
 
 highlight ColorColumn ctermbg=darkgray
-color wombat256mod
+"color wombat256mod
+color desert
 set t_Co=256
 
 set mouse=a

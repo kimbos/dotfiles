@@ -147,9 +147,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
+
+
+
 # --------------------
 # Personal preferences
 # --------------------
+
 bar {  
     tray_output primary
     position			top
@@ -177,11 +181,13 @@ exec --no-startup-i		nm-applet
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"
-bindsym $mod+l				xec "i3lock --image=$HOME/Backgrounds/lock.png -t"
+bindsym $mod+l				exec "i3lock --image=$HOME/Backgrounds/lock.png -t"
 
 bindsym $mod+o			exec "google-chrome"
 bindsym $mod+i			exec "iceweasel"
 bindsym $mod+t			exec "xtightvncviewer"
 bindsym $mod+b			exec "$HOME/Scripts/wine-ss13.sh"
 bindsym $mod+p			exec "$HOME/Scripts/rdp-vcenter.sh"
+
+for_window [class="rdesktop"] floating disable, border normal
 
