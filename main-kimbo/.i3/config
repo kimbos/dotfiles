@@ -174,7 +174,7 @@ bar {
 hide_edge_borders none 
 new_window pixel 2
 
-exec_always 			$HOME/Scripts/mon.sh
+exec_always 			$HOME/opt/scripts/mon.sh
 exec_always				feh --bg-fill /home/kimbo/Backgrounds/bg.png 
 exec --no-startup-i		hexchat --minimize=2
 exec --no-startup-i		nm-applet
@@ -186,8 +186,8 @@ bindsym $mod+l				exec "i3lock --image=$HOME/Backgrounds/lock.png -t"
 bindsym $mod+o			exec "google-chrome"
 bindsym $mod+i			exec "iceweasel"
 bindsym $mod+t			exec "xtightvncviewer"
-bindsym $mod+b			exec "$HOME/Scripts/wine-ss13.sh"
-bindsym $mod+p			exec "$HOME/Scripts/rdp-vcenter.sh"
+bindsym $mod+b			exec "$HOME/opt/scripts/wine-ss13.sh"
+bindsym $mod+p			exec "$HOME/opt/scripts/rdp-vcenter.sh"
 
 for_window [class="rdesktop"] floating disable, border normal
 
