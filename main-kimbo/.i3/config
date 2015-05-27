@@ -150,15 +150,14 @@ bindsym $mod+r mode "resize"
 
 
 
-# --------------------
+# -----------------------------------------------
 # Personal preferences
-# --------------------
 
 bar {  
-    tray_output primary
+    tray_output			primary
     position			top
     status_command		i3status 
-    workspace_buttons		yes
+    workspace_buttons	yes
  
     colors {
         background #000000
@@ -174,10 +173,10 @@ bar {
 hide_edge_borders none 
 new_window pixel 2
 
-exec_always 			$HOME/opt/scripts/monitor-setup.sh
-exec_always				feh --bg-fill /home/kimbo/Backgrounds/bg.png 
-exec --no-startup-i		hexchat --minimize=2
-exec --no-startup-i		nm-applet
+exec_always					$HOME/opt/scripts/monitor-setup.sh
+exec_always					feh --bg-fill /home/kimbo/Backgrounds/bg.png 
+exec --no-startup-id		hexchat --minimize=2
+exec --no-startup-id		nm-applet
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"
@@ -185,6 +184,7 @@ bindsym $mod+l				exec "i3lock --image=$HOME/Backgrounds/lock.png -t"
 
 bindsym $mod+o			exec "google-chrome"
 bindsym $mod+i			exec "iceweasel"
+bindsym $mod+c			exec "hexchat"
 bindsym $mod+t			exec "xtightvncviewer"
 bindsym $mod+b			exec "$HOME/opt/scripts/wine-ss13.sh"
 bindsym $mod+p			exec "$HOME/opt/scripts/rdp-vcenter.sh"
