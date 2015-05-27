@@ -174,7 +174,7 @@ bar {
 hide_edge_borders none 
 new_window pixel 2
 
-exec_always 			$HOME/opt/scripts/mon.sh
+exec_always 			$HOME/opt/scripts/monitor-setup.sh
 exec_always				feh --bg-fill /home/kimbo/Backgrounds/bg.png 
 exec --no-startup-i		hexchat --minimize=2
 exec --no-startup-i		nm-applet
