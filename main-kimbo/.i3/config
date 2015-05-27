@@ -174,13 +174,13 @@ hide_edge_borders none
 new_window pixel 2
 
 exec_always					$HOME/opt/scripts/monitor-setup.sh
-exec_always					feh --bg-fill $HOME/opt/backgrounds/bg.png 
+exec_always					feh --bg-fill $HOME/opt/dotfiles/backgrounds/bg.png 
 exec --no-startup-id		hexchat --minimize=2
 exec --no-startup-id		nm-applet
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"
-bindsym $mod+l				exec "i3lock --image=$HOME/opt/backgrounds/bg.png -t"
+bindsym $mod+l				exec "i3lock --image=$HOME/opt/dotfiles/backgrounds/bg.png -t"
 
 bindsym $mod+o			exec "google-chrome"
 bindsym $mod+i			exec "iceweasel"
