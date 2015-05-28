@@ -18,8 +18,6 @@ if [ "#TERM" ]; then
 	xterm*)
 		PS1="$PATH_COLOR[$START_COLOR\h$PATH_COLOR \W$PATH_COLOR] $END_COLOR"
 		PS2="$START_COLOR>\[$START_COLOR] "
-		#TITLEBAR='\[\033]0;\u@\h:\w\007\]'
-		#PS1="${TITLEBAR}${PS1}"
 		;;
 	linux*)
 		PS1="$RESET[$START_COLOR\h\[$PATH_COLOR \w$RESET] $END_COLOR"
@@ -36,3 +34,4 @@ if [ "#TERM" ]; then
 fi
 
 
+eval `keychain --eval id_rsa`
