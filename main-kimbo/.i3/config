@@ -178,6 +178,9 @@ exec_always					feh --bg-fill $HOME/opt/dotfiles/backgrounds/bg.png
 exec --no-startup-id		hexchat --minimize=2
 exec --no-startup-id		nm-applet
 
+bindsym $mod+bar scratchpad show
+bindsym $mod+Shift+bar move scratchpad
+
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"
 bindsym $mod+l				exec "i3lock --image=$HOME/opt/dotfiles/backgrounds/bg.png -t"
@@ -189,5 +192,5 @@ bindsym $mod+t			exec "xtightvncviewer"
 bindsym $mod+b			exec "$HOME/opt/scripts/wine-ss13.sh"
 bindsym $mod+p			exec "$HOME/opt/scripts/rdp-vcenter.sh"
 
-for_window [class="rdesktop"] floating disable, border normal
 
+for_window [class="rdesktop"] floating disable, border normal
