@@ -34,6 +34,6 @@ if [ "#TERM" ]; then
 fi
 
 
-eval `keychain --eval id_rsa`
+eval `keychain --eval id_rsa&>/dev/null`
 
 xset b off #disable hardware beep
