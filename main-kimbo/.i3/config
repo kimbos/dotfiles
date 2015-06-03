@@ -153,6 +153,11 @@ bindsym $mod+r mode "resize"
 # -----------------------------------------------
 # Personal preferences
 
+client.focused				#ffffff #000000 #ffffff
+client.unfocused			#cccccc #000000 #ffffff
+client.focused_inactive		#ffffff #000000 #ffffff
+client.urgent				#ffffff #ff0000 #ffffff
+
 bar {  
     tray_output			primary
     position			top
@@ -171,7 +176,7 @@ bar {
 }
 
 hide_edge_borders none 
-new_window pixel 1 
+new_window pixel 2 
 
 exec_always					$HOME/opt/scripts/monitor-setup.sh
 exec_always					feh --bg-fill $HOME/opt/dotfiles/backgrounds/bg.png 
