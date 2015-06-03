@@ -36,4 +36,4 @@ fi
 
 eval `keychain --eval id_rsa 2>/dev/null` 
 
-xset b off #disable hardware beep
+
