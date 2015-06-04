@@ -1,9 +1,0 @@
-XTerm*faceName: Liberation\ Mono\ for\ Powerline:size=11
-XTerm*background: #121212
-XTerm*foreground: #ffffff
-
-XTerm*dynamicColors: true
-*customization: -color
-XTerm*termName:  xterm-256color
-
-xterm*selectToClipboard: true
