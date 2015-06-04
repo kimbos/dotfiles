@@ -6,4 +6,4 @@ apt-get install vim sudo xorg feh xcompmgr i3 pulseaudio pavucontrol alsa-utils 
 <h1>Installation</h1>
 git clone https://github.com/kimbos/dotfiles.git
 
-./setup
+./setup.sh
