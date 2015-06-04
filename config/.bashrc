@@ -33,7 +33,7 @@ if [ "#TERM" ]; then
 	esac
 fi
 
-
+export EDITOR="/usr/bin/vim" # for sudoedit
 eval `keychain --eval id_rsa 2>/dev/null` 
 
 
