@@ -152,11 +152,11 @@ bindsym $mod+r mode "resize"
 
 # -----------------------------------------------
 # Personal preferences
-						    #title-border #window-border #title-text	
-client.focused				#888888 #414144 #ffffff
-client.unfocused			#333333 #000000 #888888
-client.focused_inactive		#666666 #303033 #cccccc
-client.urgent				#b03030 #503030 #ff0000
+#class					    title-border window-border title-text indicator
+client.focused				#888888	#414144 #ffffff #2e9ef4
+client.unfocused			#333333 #000000 #888888 #000000
+client.focused_inactive		#666666 #303033 #cccccc #303033
+client.urgent				#b03030 #503030 #ff0000 #503030
 
 bar {  
     tray_output			primary
@@ -166,7 +166,7 @@ bar {
  
     colors {
         background #000000
-        statusline #ffffff
+        statusline #dddddd 
 
         focused_workspace  #ffffff #285577
         active_workspace   #ffffff #333333
