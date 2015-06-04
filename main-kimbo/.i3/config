@@ -155,7 +155,7 @@ bindsym $mod+r mode "resize"
 						    #title-border #window-border #title-text	
 client.focused				#888888 #303033 #ffffff
 client.unfocused			#333333 #000000 #888888
-client.focused_inactive		#ffffff #000000 #ffffff
+client.focused_inactive		#666666 #303033 #cccccc
 client.urgent				#b03030 #503030 #ff0000
 
 bar {  
