@@ -10,7 +10,7 @@ apt-get install xorg i3 compton scrot xcompmgr vim feh
 ```bash
 git clone https://github.com/kimbos/dotfiles.git ~/opt
 ```
-**Run the install script**
+**Run the install script (makes symlinks)**
 ```bash
 ~/opt/dotfiles/install.sh
 ```
