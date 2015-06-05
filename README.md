@@ -1,4 +1,3 @@
-![](https://raw.githubusercontent.com/kimbos/dotfiles/master/backgrounds/screengrab.png)
 
 <h1>About</h1>
 My general setup (debian):
