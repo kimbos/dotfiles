@@ -8,17 +8,16 @@ ConnectedMonitors=($(xrandr | grep " connected" | awk '{print $1}'))
 DisconnectedMonitors=($(xrandr | grep " disconnected" | awk '{print $1}' ))
 
 
-# Docking?
-if [[ ${ConnectedMonitors[*]} == *"LVDS1"* ]] && [[ ${#ConnectedMonitors[*]} -gt 1 ]]; then
+# Docking
+if [[ ${ConnectedMonitors[*]} == *"LVDS1"* ]] && [[ ${#ConnectedMonitors[*]} -gt 2 ]]; then
 	echo "Docking"
-	Docking=True
-	ConnectedMonitors=("${ConnectedMonitors[@]/"LVDS1"}")
+	ConnectedMonitors=("${ConnectedMonitors[@]/"LVDS1"}") # Disable laptop monitor
 fi
 
 # Get the primary monitor
 if [[ ${#ConnectedMonitors[*]} == 1 ]]; then
-	echo "Primary monitor: $Monitor (only monitor)"
-	Primary=$Monitor
+	echo "Primary monitor: ${ConnectedMonitors[*]} (only monitor)"
+	Primary=${ConnectedMonitors[*]}
 else
 	for Monitor in ${PrimaryMonitorPreference[*]}
 	do
