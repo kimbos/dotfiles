@@ -189,7 +189,8 @@ exec --no-startup-id		nm-applet
 bindsym $mod+bar			scratchpad show
 bindsym $mod+Shift+bar		move scratchpad
 
-bindsym --release $mod+c	exec scrot -s 'screengrab.png'
+bindsym --release $mod+c		exec scrot -s 'screengrab.png'
+bindsym --release $mod+shift+c	exec scrot 'screengrab-full.png'
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"

@@ -1,23 +1,51 @@
 #!/usr/bin/env bash 
 
-LAPTOP="LVDS1"
-VGA1="VGA1"
-HDMI3="HDMI3"
-DP1="DP-1"
+# TODO: make udev rule for dock/undock
 
-if (xrandr | grep "$LAPTOP connected"); then
-	echo "active: laptop"
-	#xbacklight -set 100
-	xrandr --output $VGA1 --off
-	xrandr --output $HDMI3 --off
-	xrandr --output $LAPTOP --auto --primary
-elif (xrandr | grep "$DP1 connected"); then
-	echo "active: DPI"
-	xrandr --output $DP1 --auto --primary 
-else 
-	echo "active: docking"
-	xrandr --output $LAPTOP --off
-	xrandr --output $HDMI3 --auto
-	xrandr --output $VGA1 --auto --left-of $HDMI3 --primary
+PrimaryMonitorPreference=("LVDS1" "VGA1" "DP-1")
+
+ConnectedMonitors=($(xrandr | grep " connected" | awk '{print $1}'))
+DisconnectedMonitors=($(xrandr | grep " disconnected" | awk '{print $1}' ))
+
+
+# Docking?
+if [[ ${ConnectedMonitors[*]} == *"LVDS1"* ]] && [[ ${#ConnectedMonitors[*]} -gt 1 ]]; then
+	echo "Docking"
+	Docking=True
+	ConnectedMonitors=("${ConnectedMonitors[@]/"LVDS1"}")
 fi
+
+# Get the primary monitor
+if [[ ${#ConnectedMonitors[*]} == 1 ]]; then
+	echo "Primary monitor: $Monitor (only monitor)"
+	Primary=$Monitor
+else
+	for Monitor in ${PrimaryMonitorPreference[*]}
+	do
+		if [[ " ${ConnectedMonitors[*]} " == *" $Monitor "* ]]; then
+			echo "Primary: $Monitor (by preference)"
+			Primary=$Monitor	
+			break # There can only be one
+		fi
+	done
+fi
+
+# Turn on connected monitors
+for Monitor in ${ConnectedMonitors[*]}
+do
+	if [[ $Monitor == $Primary ]]; then
+		echo "Enable primary monitor: $Monitor"
+		xrandr --output $Monitor --auto --primary
+	else
+		echo "Enable connected monitor: $Monitor"
+		xrandr --output $Monitor --auto --right-of $Primary
+	fi
+done
+
+# Turn off disconnected monitors
+for Monitor in ${DisconnectedMonitors[*]}
+do
+	echo "Disable monitor: $Monitor"
+	xrandr --output $Monitor --off
+done
 
