@@ -176,12 +176,14 @@ bar {
 }
 
 hide_edge_borders none 
-new_window pixel 3 
+new_window pixel 3
+ 
+exec --no-startup-id			$HOME/opt/dotfiles/scripts/monitor-setup.sh i3restart # First run, hack for i3bar refresh
+exec_always --no-startup-id		$HOME/opt/dotfiles/scripts/monitor-setup.sh
 
-exec_always					$HOME/opt/dotfiles/scripts/monitor-setup.sh
-exec_always					feh --bg-fill $HOME/opt/dotfiles/backgrounds/bg.png 
-exec --no-startup-id		sleep 2 && compton -b --backend glx --vsync opengl-swc
-exec --no-startup-id		xset b off # disable hardware beep
+exec_always --no-startup-id		feh --bg-fill $HOME/opt/dotfiles/backgrounds/bg.png 
+exec --no-startup-id			sleep 2 && compton -b --backend glx --vsync opengl-swc
+exec --no-startup-id			xset b off # disable hardware beep
 
 exec --no-startup-id		hexchat --minimize=2
 exec --no-startup-id		nm-applet

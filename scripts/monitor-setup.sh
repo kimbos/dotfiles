@@ -10,6 +10,7 @@ DisconnectedMonitors=($(xrandr | grep " disconnected" | awk '{print $1}' ))
 
 # Docking
 if [[ ${ConnectedMonitors[*]} == *"LVDS1"* ]] && [[ ${#ConnectedMonitors[*]} -gt 2 ]]; then
+	# We assume it is a docking if there is a connected laptop screen + 2 or more external screens
 	echo "Docking"
 	ConnectedMonitors=("${ConnectedMonitors[@]/"LVDS1"}") # Disable laptop monitor
 fi
@@ -33,10 +34,10 @@ fi
 for Monitor in ${ConnectedMonitors[*]}
 do
 	if [[ $Monitor == $Primary ]]; then
-		echo "Enable primary monitor: $Monitor"
+		echo "Enable primary monitor: $Monitor" >> $HOME/xrandr.log
 		xrandr --output $Monitor --auto --primary
 	else
-		echo "Enable connected monitor: $Monitor"
+		echo "Enable connected monitor: $Monitor" >> $HOME/xrandr.log
 		xrandr --output $Monitor --auto --right-of $Primary
 	fi
 done
@@ -48,3 +49,6 @@ do
 	xrandr --output $Monitor --off
 done
 
+if [[ $1 == "i3restart" ]]; then
+	i3-msg restart
+fi
