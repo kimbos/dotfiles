@@ -1,8 +1,7 @@
 #!/usr/bin/env bash 
 
-# TODO: make udev rule for dock/undock
-
 PrimaryMonitorPreference=("LVDS1" "VGA1" "DP-1")
+
 
 AllMonitors=($(xrandr | grep "connected" | awk '{print $1}' ))
 ConnectedMonitors=($(xrandr | grep " connected" | awk '{print $1}'))
@@ -26,19 +25,16 @@ done
 
 
 # Detect primary monitor 
-if [[ ${#ConnectedMonitors[*]} == 1 ]]; then
-	echo "Primary monitor: ${ConnectedMonitors[*]} (only monitor)"
-	Primary=${ConnectedMonitors[*]}
-else
-	for Monitor in ${PrimaryMonitorPreference[*]}
-	do
-		if [[ " ${ConnectedMonitors[*]} " == *" $Monitor "* ]]; then
-			echo "Primary: $Monitor (by preference)"
-			Primary=$Monitor	
-			break # There can only be one
-		fi
-	done
-fi
+Primary=${ConnectedMonitors[1]}
+for Monitor in ${PrimaryMonitorPreference[*]}
+do
+	if [[ " ${ConnectedMonitors[*]} " == *" $Monitor "* ]]; then
+		echo "Primary: $Monitor (by preference)"
+		Primary=$Monitor	
+		break # There can only be one
+	fi
+done
+
 
 # Turn on connected monitors
 for Monitor in ${ConnectedMonitors[*]}
@@ -53,6 +49,7 @@ do
 done
 
 
-if [[ $1 == "i3restart" ]]; then
+# workaround for i3bar not showing if primary monitor is set before i3 is started
+if [[ $1 == "i3restart" ]]; then	
 	i3-msg restart
 fi
