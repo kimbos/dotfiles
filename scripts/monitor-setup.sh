@@ -4,18 +4,28 @@
 
 PrimaryMonitorPreference=("LVDS1" "VGA1" "DP-1")
 
+AllMonitors=($(xrandr | grep "connected" | awk '{print $1}' ))
 ConnectedMonitors=($(xrandr | grep " connected" | awk '{print $1}'))
-DisconnectedMonitors=($(xrandr | grep " disconnected" | awk '{print $1}' ))
 
 
-# Docking
+# Detect docking
 if [[ ${ConnectedMonitors[*]} == *"LVDS1"* ]] && [[ ${#ConnectedMonitors[*]} -gt 2 ]]; then
 	# We assume it is a docking if there is a connected laptop screen + 2 or more external screens
 	echo "Docking"
 	ConnectedMonitors=("${ConnectedMonitors[@]/"LVDS1"}") # Disable laptop monitor
 fi
 
-# Get the primary monitor
+# Turn off disconnected monitors
+for Monitor in ${AllMonitors[*]}
+do
+	if [[ ${ConnectedMonitors[*]} != *"$Monitor"* ]]; then  
+		echo "Disable monitor: $Monitor"
+		xrandr --output $Monitor --off
+	fi	
+done
+
+
+# Detect primary monitor 
 if [[ ${#ConnectedMonitors[*]} == 1 ]]; then
 	echo "Primary monitor: ${ConnectedMonitors[*]} (only monitor)"
 	Primary=${ConnectedMonitors[*]}
@@ -42,12 +52,6 @@ do
 	fi
 done
 
-# Turn off disconnected monitors
-for Monitor in ${DisconnectedMonitors[*]}
-do
-	echo "Disable monitor: $Monitor"
-	xrandr --output $Monitor --off
-done
 
 if [[ $1 == "i3restart" ]]; then
 	i3-msg restart
