@@ -152,11 +152,12 @@ bindsym $mod+r mode "resize"
 
 # -----------------------------------------------
 # Personal preferences
-#class					    title-border window-border title-text indicator
-client.focused				#888888	#414144 #ffffff #2e9ef4
+#class					    title-border window-border title-text hor/vert-indicator
+client.focused				#888888	#414144 #ffffff #414144
 client.unfocused			#333333 #000000 #888888 #000000
-client.focused_inactive		#666666 #303033 #cccccc #303033
+client.focused_inactive		#666666 #303033 #cccccc #303033 
 client.urgent				#b03030 #503030 #ff0000 #503030
+
 
 bar {  
     tray_output			primary

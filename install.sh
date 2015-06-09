@@ -11,6 +11,7 @@ ln -f -s ~/opt/dotfiles/config/.vim ~/.vim
 ln -f -s ~/opt/dotfiles/config/.i3 ~/.i3
 ln -f -s ~/opt/dotfiles/config/.i3status.conf ~/.i3status.conf
 ln -f -s ~/opt/dotfiles/config/.ssh/config ~/.ssh/config
+ln -f -s ~/opt/dotfiles/config/.tmux.conf ~/.tmux.conf
 
 ln -f -s ~/opt/dotfiles/scripts ~/scripts
 
