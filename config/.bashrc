@@ -33,6 +33,13 @@ if [ "#TERM" ]; then
 	esac
 fi
 
+ssh() {
+  tmux rename-window "[SSH] $*"
+  command ssh "$@"
+  sleep 1 && exit
+  tmux rename-window "bash (exited ssh)"
+}
+
 export EDITOR="/usr/bin/vim" # for sudoedit
 eval `keychain --eval id_rsa 2>/dev/null` 
 
