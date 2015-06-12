@@ -6,7 +6,7 @@
 ## Installation
 **Install the required packages**
 ```bash
-apt-get install xorg i3 compton scrot xcompmgr vim feh 
+apt-get install xorg i3 compton scrot xcompmgr vim feh make
 ```
 **Clone repository into ~/opt**
 ```bash
