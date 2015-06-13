@@ -86,8 +86,8 @@ new_float pixel 5
 hide_edge_borders both
 
 
-gaps inner 7 
-gaps outer 14
+gaps inner 10 
+gaps outer 0 
 
 workspace 2 gaps inner 0
 workspace 2 gaps outer 0

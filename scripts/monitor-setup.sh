@@ -1,6 +1,6 @@
 #!/usr/bin/env bash 
 
-PrimaryMonitorPreference=("LVDS1" "VGA1" "DP-1")
+PrimaryMonitorPreference=("LVDS1" "VGA1" "DP-1" "HDMI2")
 
 
 AllMonitors=($(xrandr | grep "connected" | awk '{print $1}' ))
