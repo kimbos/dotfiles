@@ -85,12 +85,12 @@ new_window pixel 4
 new_float pixel 5
 hide_edge_borders both
 
-
+smart_gaps on
 gaps inner 10 
 gaps outer 0 
 
-workspace 2 gaps inner 0
-workspace 2 gaps outer 0
+workspace 1 gaps inner 0
+workspace 1 gaps outer 0
 
 hide_edge_borders none 
 new_window pixel 1
@@ -129,6 +129,7 @@ exec --no-startup-id			xset b off # disable hardware beep
 
 exec --no-startup-id		hexchat --minimize=2
 exec --no-startup-id		nm-applet
+exec --no-startup-id		steam -silent
 
 bindsym $mod+bar			scratchpad show
 bindsym $mod+Shift+bar		move scratchpad
@@ -148,3 +149,5 @@ bindsym $mod+p			exec "$HOME/opt/dotfiles/scripts/rdp-vcenter.sh"
 
 
 for_window [class="rdesktop"] floating disable, border none
+assign [class="rdesktop"] 1
+assign [class="Wine"] 1
