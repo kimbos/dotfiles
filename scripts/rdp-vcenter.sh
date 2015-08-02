@@ -10,4 +10,4 @@ ResY=$(echo "scale=0;($(xrandr | grep " primary " |  awk '{print $4}' | awk -F '
 Size=${ResX}x${ResY}
 echo ${Size}
 
-rdesktop -k no -u ${User} ${Server} -r clipboard:PRIMARYCLIPBOARD -K -r disk:down=$HOME/Downloads -g ${Size}
+rdesktop -k no -u ${User} ${Server} -r clipboard:CLIPBOARD -K -r disk:down=$HOME/Downloads -g ${Size}
