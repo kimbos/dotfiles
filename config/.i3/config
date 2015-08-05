@@ -134,7 +134,7 @@ exec --no-startup-id		steam -silent
 bindsym $mod+bar			scratchpad show
 bindsym $mod+Shift+bar		move scratchpad
 
-bindsym --release $mod+c		exec scrot -s 'screengrab.png'
+bindsym --release $mod+c		exec scrot -s 'screengrab-%m-%d-%H%M%S.png'
 bindsym --release $mod+shift+c	exec scrot 'screengrab-full.png'
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
@@ -149,5 +149,4 @@ bindsym $mod+p			exec "$HOME/opt/dotfiles/scripts/rdp-vcenter.sh"
 
 
 for_window [class="rdesktop"] floating disable, border none
-assign [class="rdesktop"] 1
 assign [class="Wine"] 1
