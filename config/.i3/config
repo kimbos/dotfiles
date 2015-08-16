@@ -79,12 +79,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-# fix graphical glitches 
-new_window none
-new_window pixel 4
-new_float pixel 5
-hide_edge_borders both
-
 smart_gaps on
 gaps inner 10 
 gaps outer 0 
@@ -92,6 +86,10 @@ gaps outer 0
 workspace 1 gaps inner 0
 workspace 1 gaps outer 0
 
+#new_window pixel 4
+#hide_edge_borders both
+new_window none
+new_float pixel 5
 hide_edge_borders none 
 new_window pixel 1
 
