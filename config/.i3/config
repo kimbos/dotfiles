@@ -142,6 +142,7 @@ bindsym $mod+KP_Add			exec "amixer set Master 5%+"
 bindsym $mod+l				exec "i3lock --ignore-empty-password --image=$HOME/opt/dotfiles/backgrounds/lock.png --tiling"
 
 bindsym $mod+o			exec "google-chrome"
+bindsym $mod+Shift+o	exec "killall chrome"
 bindsym $mod+i			exec "iceweasel"
 bindsym $mod+t			exec "xtightvncviewer"
 bindsym $mod+b			exec "$HOME/opt/dotfiles/scripts/wine-ss13.sh"
