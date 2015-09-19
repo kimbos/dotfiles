@@ -79,12 +79,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-# fix graphical glitches 
-new_window none
-new_window pixel 4
-new_float pixel 5
-hide_edge_borders both
-
 smart_gaps on
 gaps inner 10 
 gaps outer 0 
@@ -92,6 +86,10 @@ gaps outer 0
 workspace 1 gaps inner 0
 workspace 1 gaps outer 0
 
+#new_window pixel 4
+#hide_edge_borders both
+new_window none
+new_float pixel 5
 hide_edge_borders none 
 new_window pixel 1
 
@@ -134,7 +132,7 @@ exec --no-startup-id		steam -silent
 bindsym $mod+bar			scratchpad show
 bindsym $mod+Shift+bar		move scratchpad
 
-bindsym --release $mod+c		exec scrot -s 'screengrab.png'
+bindsym --release $mod+c		exec scrot -s 'screengrab-%m-%d-%H%M%S.png'
 bindsym --release $mod+shift+c	exec scrot 'screengrab-full.png'
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
@@ -150,5 +148,4 @@ bindsym $mod+p			exec "$HOME/opt/dotfiles/scripts/rdp-vcenter.sh"
 
 
 for_window [class="rdesktop"] floating disable, border none
-assign [class="rdesktop"] 1
 assign [class="Wine"] 1
