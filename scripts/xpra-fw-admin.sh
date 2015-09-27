@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xpra attach ssh:itk@fw-admin.mgk.no:100
+xpra attach ssh:itk@10.7.0.36:100
