@@ -104,10 +104,12 @@ bar {
     position			top
     status_command		i3status 
     workspace_buttons	yes
- 
+	separator_symbol " ¤ " 
+
     colors {
         background #121212
         statusline #cdcdcd 
+		separator #F9A825
 
         focused_workspace  #ffffff #285577
         active_workspace   #ffffff #333333
