@@ -104,7 +104,7 @@ bar {
     position			top
     status_command		i3status 
     workspace_buttons	yes
-	separator_symbol " ¤ " 
+	separator_symbol " ¤ "
 
     colors {
         background #121212
@@ -127,8 +127,9 @@ exec_always --no-startup-id		feh $HOME/opt/dotfiles/backgrounds/bg.png --bg-fill
 exec --no-startup-id			sleep 2 && compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id			xset b off # disable hardware beep
 
-exec --no-startup-id		hexchat --minimize=2
+exec --no-startup-id		mate-power-manager
 exec --no-startup-id		nm-applet
+exec --no-startup-id		hexchat --minimize=2
 exec --no-startup-id		steam -silent
 
 bindsym $mod+bar			scratchpad show
@@ -149,5 +150,5 @@ bindsym $mod+b			exec "$HOME/opt/dotfiles/scripts/wine-ss13.sh"
 bindsym $mod+p			exec "$HOME/opt/dotfiles/scripts/rdp-vcenter.sh"
 
 
-for_window [class="rdesktop"] floating disable, border none
+for_window [class="rdesktop"] floating disable border none 
 assign [class="Wine"] 1
