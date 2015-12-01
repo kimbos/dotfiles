@@ -123,7 +123,7 @@ bar {
 exec --no-startup-id			$HOME/opt/dotfiles/scripts/monitor-setup.sh i3restart # First run, hack for i3bar refresh
 exec_always --no-startup-id		$HOME/opt/dotfiles/scripts/monitor-setup.sh
 
-exec_always --no-startup-id		feh $HOME/opt/dotfiles/backgrounds/bg.png --bg-fill
+exec_always --no-startup-id		feh $HOME/opt/dotfiles/backgrounds/* --bg-fill --randomize
 exec --no-startup-id			sleep 2 && compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id			xset b off # disable hardware beep
 
@@ -140,7 +140,7 @@ bindsym --release $mod+shift+c	exec scrot 'screengrab-full.png'
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"
-bindsym $mod+l				exec "i3lock --ignore-empty-password --image=$HOME/opt/dotfiles/backgrounds/lock.png --tiling"
+bindsym $mod+l				exec "i3lock -c 001A3D"
 
 bindsym $mod+o			exec "google-chrome"
 bindsym $mod+Shift+o	exec "killall chrome"
