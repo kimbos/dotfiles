@@ -1,4 +1,2 @@
 ## Screenshot
-![](https://raw.githubusercontent.com/kimbos/dotfiles/master/backgrounds/screengrab.png)
-
-![](https://raw.githubusercontent.com/kimbos/dotfiles/master/backgrounds/screengrab2.png)
+![](https://raw.githubusercontent.com/kimbos/dotfiles/master/screengrab-full.png)
