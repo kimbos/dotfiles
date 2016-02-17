@@ -5,9 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+export EDITOR="/usr/bin/vim" # for sudoedit
+eval `keychain --eval id_rsa 2>/dev/null` 
+
+# enable bash completion in interactive shells
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+# Color scheme
 alias ls='ls --color=auto'
-
-
 START_COLOR="\[\e[0;90m\]"
 END_COLOR="\[\e[0m\]"
 PATH_COLOR="\[\e[0;96m\]"
@@ -32,15 +39,5 @@ if [ "#TERM" ]; then
 		;;
 	esac
 fi
-
-ssh() {
-  tmux rename-window "[SSH] $*"
-  command ssh "$@"
-  sleep 1 && exit
-  tmux rename-window "bash (exited ssh)"
-}
-
-export EDITOR="/usr/bin/vim" # for sudoedit
-eval `keychain --eval id_rsa 2>/dev/null` 
 
 

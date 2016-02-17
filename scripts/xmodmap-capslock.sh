@@ -1,3 +1,5 @@
+
+
 xmodmap -e "clear Lock" 
 xmodmap -e "clear Control"
 xmodmap -e "add control = Control_L"
