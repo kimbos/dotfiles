@@ -79,12 +79,12 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
-smart_gaps on
-gaps inner 10 
-gaps outer 0 
+#smart_gaps on
+#gaps inner 10 
+#gaps outer 0 
 
-workspace 1 gaps inner 0
-workspace 1 gaps outer 0
+#workspace 1 gaps inner 0
+#workspace 1 gaps outer 0
 
 #new_window pixel 4
 #hide_edge_borders both
@@ -128,7 +128,7 @@ bar {
 exec --no-startup-id			$HOME/opt/dotfiles/scripts/monitor-setup.sh i3restart # First run, hack for i3bar refresh
 exec_always --no-startup-id		$HOME/opt/dotfiles/scripts/monitor-setup.sh
 
-exec_always --no-startup-id		feh $HOME/opt/dotfiles/backgrounds/* --bg-fill --randomize
+exec_always --no-startup-id		sleep 2 && feh $HOME/opt/dotfiles/backgrounds/* --bg-fill --randomize
 exec --no-startup-id			sleep 2 && compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id			xset b off # disable hardware beep
 
@@ -140,8 +140,8 @@ exec --no-startup-id		steam -silent
 bindsym $mod+bar			scratchpad show
 bindsym $mod+Shift+bar		move scratchpad
 
-bindsym --release $mod+c		exec scrot -s 'screengrab-%m-%d-%H%M%S.png'
-bindsym --release $mod+shift+c	exec scrot 'screengrab-full.png'
+bindsym --release $mod+c		exec scrot -s 'Pictures/screengrab-%m-%d-%H%M%S.png' && feh 'Pictures/screengrab-%m-%d-%H%M%S.png' 
+bindsym --release $mod+shift+c	exec scrot 'Pictures/screengrab-full.png' && feh 'Pictures/screengrab-full.png' 
 
 bindsym $mod+KP_Subtract	exec "amixer set Master 5%-"
 bindsym $mod+KP_Add			exec "amixer set Master 5%+"
