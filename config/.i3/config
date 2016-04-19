@@ -129,7 +129,7 @@ exec --no-startup-id			$HOME/opt/dotfiles/scripts/monitor-setup.sh i3restart # F
 exec_always --no-startup-id		$HOME/opt/dotfiles/scripts/monitor-setup.sh
 
 exec_always --no-startup-id		sleep 2 && feh $HOME/opt/dotfiles/backgrounds/* --bg-fill --randomize
-exec --no-startup-id			sleep 2 && compton -b --backend glx --vsync opengl-swc
+exec_always --no-startup-id		sleep 2 && compton -b --backend glx --vsync opengl-swc
 exec --no-startup-id			xset b off # disable hardware beep
 
 exec --no-startup-id		mate-power-manager
